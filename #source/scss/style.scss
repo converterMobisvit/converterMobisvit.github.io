@@ -8,6 +8,7 @@
 @import "options/mixin.scss";
 @import "options/keyframes.scss";
 @import "main/nav.scss";
+@import "main/header.scss";
 // * end import
 
 
@@ -26,6 +27,11 @@
   width: 99%;
   margin: 0 auto;
 
+}
+
+body {
+  position: relative;
+  z-index: -1000;
 }
 
 //$=====  END LINK FONTS  ======
