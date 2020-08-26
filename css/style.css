@@ -85,6 +85,30 @@ h6 {
 		font-weight: inherit;
 }
 
+@keyframes animationBurgerText {
+		0% {
+				opacity: 0;
+		}
+		100% {
+				opacity: 1;
+		}
+}
+@keyframes animationBurgerButtonLeft {
+		0% {
+				left: -200%;
+		}
+		100% {
+				left: 0;
+		}
+}
+@keyframes animationBurgerButtonRight {
+		0% {
+				right: -200%;
+		}
+		100% {
+				right: 0;
+		}
+}
 .nav {
 		display: flex;
 		align-items: center;
@@ -203,23 +227,87 @@ h6 {
 				overflow: auto;
 				text-align: center;
 				transition: all 0.3s ease 0s;
-				background-color: #18b5a4;
+				background-color: #bfabf5;
 		}
 
 		.nav_menu.active {
 				top: 0;
+				padding: 100px 0px 0px 0px;
 		}
 
 		.nav_list {
+				position: relative;
 				display: block;
 		}
 
 		.nav_item {
-				margin: 0px 0px 20px 0px;
+				position: relative;
+				margin: 0px 0px 80px 0px;
+				font-size: 25px;
+				animation-name: animationBurgerText;
+				animation-duration: 4.5s;
+				animation-timing-function: ease-in;
+				animation-delay: 1s;
+		}
+
+		.wrap_button-nav {
+				display: flex;
 		}
 
 		.button-burger {
+				position: relative;
+				display: inline-block;
+				margin: 0px 50px 0px 0px;
+				font-size: 20px;
+				background: none;
+				outline: none;
+				border: none;
+		}
+		.button-burger:first-child {
+				animation-name: animationBurgerButtonLeft;
+				animation-duration: 3s;
+				animation-timing-function: cubic-bezier(0.25, 2.5, 0.4, 0.32);
+				animation-delay: 1s;
+		}
+		.button-burger:last-child {
+				animation-name: animationBurgerButtonRight;
+				animation-duration: 3s;
+				animation-timing-function: cubic-bezier(0.25, 2.5, 0.4, 0.32);
+				animation-delay: 1s;
+		}
+		.button-burger span {
+				position: relative;
+				z-index: 1;
 				display: block;
+				min-width: 1em;
+				padding: 1em;
+				border-radius: 1em;
+				background-color: #bfabf5;
+				border: 1px solid #ae94f2;
+				box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+				transition: transform 0.1s, box-shadow 0.2s, background-color 0.2s;
+		}
+		.button-burger::after {
+				content: "";
+				position: absolute;
+				top: -0.8em;
+				bottom: -0.8em;
+				left: -0.8em;
+				right: -0.8em;
+				border-radius: 1em;
+				box-shadow: 0 0 0px rgba(0, 0, 0, 0.2), inset 0 0 0px rgba(0, 0, 0, 0.2);
+				transition: box-shadow 0.1s;
+		}
+		.button-burger:hover span, .button-burger:focus span {
+				background-color: #c9b9f7;
+		}
+		.button-burger:active span {
+				background-color: #bfabf5;
+				transform: scale(0.97);
+				box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+		.button-burger:active::after {
+				box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), inset -3px 3px 1em rgba(0, 0, 0, 0.2);
 		}
 
 		.wrap_button {

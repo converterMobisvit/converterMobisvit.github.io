@@ -1,0 +1,73 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 100px 17px 100px;
+
+  &_list {
+    display: flex;
+    align-items: center;
+  }
+
+  &_item {
+    margin: 0px 50px 0px 0px;
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #4E5983;
+  }
+
+  &_button {
+    @include buttonNav;
+
+    &:hover {
+      @include buttonNavHover
+    }
+
+    &:last-child {
+      margin: 0px 0px 0px 0px;
+    }
+  }
+
+  &_burger {
+    display: none;
+  }
+
+
+}
+
+.button-burger {
+  display: none;
+}
+
+.wrap_button {
+  display: flex;
+  align-items: center;
+}
+
+
+@media(max-width: 1200px) {
+
+  //$==========================================
+  //$=         IMPORT STYLE BURGER           =
+  //$==========================================
+
+  @import "../elements/burger.scss";
+
+  //$=====  END   ======
+
+  //$==========================================
+  //$=       IMOPORT STYLE BUTTON BURGER      =
+  //$==========================================
+
+  @import "../elements/buttonNavBurger";
+
+  //$=====  END   ======
+}
+
+@media(max-width: 580px) {
+  .nav {
+    padding: 10px 20px 10px 20px;
+  }
+}

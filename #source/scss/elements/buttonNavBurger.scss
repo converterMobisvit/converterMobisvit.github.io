@@ -1,0 +1,79 @@
+.wrap_button-nav {
+  display: flex;
+}
+
+.button-burger {
+  position: relative;
+
+  display: inline-block;
+
+  margin: 0px 50px 0px 0px;
+
+  font-size: 20px;
+
+  background: none;
+  outline: none;
+  border: none;
+
+  &:first-child {
+    animation-name: animationBurgerButtonLeft;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.25, 2.50, 0.40, 0.32);
+    animation-delay: 1s;
+  }
+
+  &:last-child {
+    animation-name: animationBurgerButtonRight;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.25, 2.50, 0.40, 0.32);
+    animation-delay: 1s;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-width: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: $bgButtonBurger;
+    border: 1px solid darken($bgButtonBurger, 5%);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform .1s, box-shadow .2s, background-color .2s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -0.8em;
+    bottom: -0.8em;
+    left: -0.8em;
+    right: -0.8em;
+    border-radius: 1em;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2), inset 0 0 0px rgba(0, 0, 0, 0.2);
+    transition: box-shadow .1s;
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      background-color: lighten($bgButtonBurger, 3%);
+    }
+  }
+
+  &:active {
+    span {
+      background-color: $bgButtonBurger;
+      transform: scale(0.97);
+      box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), inset -3px 3px 1em rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.wrap_button {
+  display: none;
+}
