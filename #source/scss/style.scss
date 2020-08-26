@@ -1,0 +1,30 @@
+//$========================================== 
+//$=           IMPORT             =
+//$==========================================
+
+// * options import
+@import "options/null.scss";
+@import "options/variables.scss";
+@import "options/mixin.scss";
+@import "elements/nav.scss";
+// * end import
+
+
+//$=====  END IMPORT  ======
+
+//$========================================== 
+//$=           LINK FONTS             =
+//$==========================================
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+.container {
+  max-width: 1244px;
+  width: 99%;
+  margin: 0 auto;
+
+}
+
+//$=====  END LINK FONTS  ======
